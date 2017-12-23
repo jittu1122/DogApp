@@ -4,12 +4,12 @@
   </h1>
   <div class="col-sm-12 col-xs-12 main">
     <br>
-    <span>Show me a</span>
+    <label for="br">Show me a</label>
     <select id="br" class="btn btn-primary" (change)="getImage($event.target.value)">
-      <option *ngFor="let Breed of breedsA; let i=index" value="{{ Breed }}">{{ Breed }}</option>
+      <option *ngFor="let Breed of breedsA.message; let i=index" value="{{ Breed }}">{{ Breed }}</option>
     </select>
     <br>
-    <img src="{{ imageD }}" style="padding: 25px; max-height: 400px; max-width: 100%">
+    <img src="{{ imageD.message }}" style="padding: 25px; max-height: 400px; max-width: 100%">
     <br>
     <button class="btn btn-info" (click)="getImage($event.target.value)" value="{{ selectedBreed }}">More Image of {{ selectedBreed }}</button>
   </div>
