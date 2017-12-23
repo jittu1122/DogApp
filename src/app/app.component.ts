@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  imageD = {};
-  selectedBreed = '';
+  imageD: {};
+  selectedBreed: '';
   breedsA: {};
   constructor(private http: HttpClient) {
   }
