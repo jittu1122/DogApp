@@ -7,20 +7,21 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  imageD = '../assets/dog_icon-1.png';
+  imageD = {};
   selectedBreed = '';
-  breedsA: Array<80>;
+  breedsA: {};
   constructor(private http: HttpClient) {
   }
   ngOnInit(): void {
+    this.imageD = {status: "success", message: "../assets/dog_icon-1.png"};
     this.http.get('https://dog.ceo/api/breeds/list').subscribe(data => {
-      this.breedsA = data.message;
+      this.breedsA = data;
     });
    /* this.getName('akita');*/
   }
   getImage(BrName) {
     this.http.get('https://dog.ceo/api/breed/' + BrName + '/images/random').subscribe(data2 => {
-      this.imageD = data2.message;
+      this.imageD = data2;
       this.selectedBreed = BrName;
     });
   }
@@ -38,3 +39,4 @@ export class AppComponent implements OnInit {
   }*/
 
 }
+
